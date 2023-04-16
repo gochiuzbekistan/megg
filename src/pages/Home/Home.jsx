@@ -1,12 +1,12 @@
-import Stars from "../../components/Stars/Stars";
 import { Link } from "wouter";
+import Stars from "../../components/Stars/Stars";
+import Cards from "../../components/Cards/Cards";
 import HomeStyled from "./Home.styled";
 
 export default function Home() {
   return (
     <HomeStyled>
       Home
-      <Link href="/gallery">Gallery</Link>
       <Stars totalStars={10}>
         <div className="container">
           <h1>Resonance</h1>
@@ -21,6 +21,7 @@ export default function Home() {
           </p>
         </div>
       </Stars>
+      <Cards />
     </HomeStyled>
   );
 }
