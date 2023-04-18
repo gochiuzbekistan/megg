@@ -1,6 +1,7 @@
 import Home from "./pages/Home/Home";
 import Gallery from "./pages/Gallery/Gallery";
 import { Route, Link } from "wouter";
+import images from "./data";
 
 function App() {
   return (
@@ -9,7 +10,7 @@ function App() {
         <Home />
       </Route>
       <Route path="/gallery">
-        <Gallery />
+        <Gallery images={images} />
       </Route>
       <footer>some things never change</footer>
     </div>

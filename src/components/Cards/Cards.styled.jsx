@@ -5,8 +5,14 @@ const CardsStyled = styled.div`
   width: 300px;
   height: 440px;
 
+  a {
+    position: absolute;
+    inset: 0;
+  }
+
   .image {
     position: absolute;
+    pointer-events: none;
   }
 
   .large {
