@@ -26,11 +26,7 @@ export default function Gallery({ images }) {
     };
 
     currentThing.src = src;
-
-    // sizesImage.src = img.src;
-
     sizesImage.src = src;
-
     setLoadingStyles({ top, left, width, height });
     setIsLoading(true);
 
