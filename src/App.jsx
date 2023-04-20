@@ -9,10 +9,10 @@ function App() {
   return (
     <AppStyled>
       <ScrollToTop />
-      <Route path="/">
+      <Route path="/megg">
         <Home />
       </Route>
-      <Route path="/gallery">
+      <Route path="/megg/gallery">
         <Gallery images={images} />
       </Route>
       <footer className="info-card">

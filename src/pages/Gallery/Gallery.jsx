@@ -66,7 +66,7 @@ export default function Gallery({ images }) {
 
   return (
     <GalleryStyled ref={galleryRef}>
-      <Link className="home-link" title="home" href="/"></Link>
+      <Link className="home-link" title="home" href="/megg"></Link>
       <div className="images">
         {images.map((image, index) => (
           <div

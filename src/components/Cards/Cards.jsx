@@ -10,7 +10,7 @@ import small_02 from "../../assets/images/cards/small_02.jpg";
 export default function Cards() {
   return (
     <CardsStyled>
-      <Link title="gallery" to="/gallery">
+      <Link title="gallery" to="/megg/gallery">
         <img src={card_01} alt="large image" className="image large" />
         <img src={small_01} alt="small image" className="image small" />
         <img src={card_02} alt="large image" className="image large" />
