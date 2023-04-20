@@ -38,6 +38,8 @@ const PartyCardStyled = styled.div`
     padding: 20px;
     border-radius: 10px;
     position: relative;
+    text-align: center;
+    line-height: 50px;
   }
 
   @keyframes rotate {

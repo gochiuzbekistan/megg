@@ -5,7 +5,7 @@ import info from "../../assets/images/info.svg";
 import link_icon from "../../assets/images/link-icon.svg";
 
 const GalleryStyled = styled.main`
-  --mills: 500m8;
+  --mills: 330ms;
   background: #a93b4d;
   flex-grow: 1;
   display: flex;

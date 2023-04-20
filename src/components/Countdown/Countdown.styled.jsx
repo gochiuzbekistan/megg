@@ -6,6 +6,8 @@ const CountdownStyled = styled.div`
 
     @media screen and (max-width: 500px) {
       font-size: 15px;
+      line-height: 25px;
+      text-align: center;
     }
   }
 

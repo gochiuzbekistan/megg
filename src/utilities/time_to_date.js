@@ -8,8 +8,6 @@ export default function time_to_date(month, day) {
 
   if (presentDay.toDateString() === date.toDateString()) return 0;
 
-  console.log(`date: ${date.toDateString()}`);
-
   const seconds = (date.valueOf() - presentDay.valueOf()) / 1000;
   const secondsInMinute = 60;
   const secondsInHour = secondsInMinute * 60;

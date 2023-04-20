@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const FirebaseStyled = styled.pre`
-  background: linear-gradient(gray, yellow, orange, red);
+  background: linear-gradient(pink, yellow, orange, red);
   font-family: chino;
   font-size: 16px;
   background-clip: text;

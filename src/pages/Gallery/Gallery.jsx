@@ -92,8 +92,12 @@ export default function Gallery({ images }) {
               }
               back={
                 <div className="links">
-                  <a href={image.source}>Artist</a>
-                  <a href={image.artist}>Source</a>
+                  <a href={image.artist} target="_blank">
+                    Artist
+                  </a>
+                  <a href={image.source} target="_blank">
+                    Source
+                  </a>
                   <button onClick={() => setTurned(null)}></button>
                 </div>
               }

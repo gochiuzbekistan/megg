@@ -14,6 +14,10 @@ const CardsStyled = styled.div`
   .image {
     position: absolute;
     pointer-events: none;
+    width: 100%;
+    height: 100%;
+    outline: 5px solid #ed9393;
+    box-shadow: 0 5px 5px 3px #69124299;
   }
 
   .large {
@@ -35,14 +39,14 @@ const CardsStyled = styled.div`
   }
 
   .small {
-    width: 50px;
-    height: 50px;
+    width: 100px;
+    height: 100px;
     object-fit: cover;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     transition: transform 1s;
-
+    border-radius: 10px;
   }
 
   @media (hover: hover) {

@@ -9,7 +9,7 @@ export default function Firebase() {
 
   useEffect(() => {
     const contentWidth = ~~(width / 9.6);
-    const contentHeight = 25;
+    const contentHeight = 30;
     const size = contentWidth * contentHeight;
     const chars = [" ", ".", "u", "g", "e", "m", "U", "G", "E", "M"];
     const intensity = new Array(size + contentWidth + 1).fill(0);
@@ -21,7 +21,7 @@ export default function Firebase() {
       for (let i = 0; i < 10; i++)
         intensity[
           random(0, contentWidth) + contentWidth * (contentHeight - 1)
-        ] = ~~(contentWidth / 2);
+        ] = ~~(contentWidth / 1.5);
       for (let i = 0; i < size; i++) {
         intensity[i] = ~~(
           (intensity[i] +
