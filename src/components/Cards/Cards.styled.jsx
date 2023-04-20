@@ -4,6 +4,7 @@ const CardsStyled = styled.div`
   position: relative;
   width: 300px;
   height: 440px;
+  margin: 50px 0;
 
   a {
     position: absolute;

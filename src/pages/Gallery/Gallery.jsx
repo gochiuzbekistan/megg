@@ -2,12 +2,14 @@ import { Link } from "wouter";
 import GalleryStyled from "./Gallery.styled";
 import Picture from "../../components/Picture/Picture";
 import { useState, useRef } from "react";
+import SurideCard from "../../components/SurideCard/SurideCard";
 
 export default function Gallery({ images }) {
   const [currentThing, setCurrentThing] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [loadingstyles, setLoadingStyles] = useState(null);
+  const [turned, setTurned] = useState(null);
   const galleryRef = useRef(null);
 
   function handle_click(event, src, index) {
@@ -57,21 +59,45 @@ export default function Gallery({ images }) {
     }, 500);
   }
 
+  function turn_card(event, index) {
+    event.stopPropagation();
+    setTurned(index);
+  }
+
   return (
     <GalleryStyled ref={galleryRef}>
-      <Link href="/">home</Link>
+      <Link className="home-link" title="home" href="/"></Link>
       <div className="images">
         {images.map((image, index) => (
           <div
+            className="card"
             key={index}
             data-index={index}
             onClick={
               isLoading
                 ? null
-                : (event) => handle_click(event, image.src, index)
+                : (event) => handle_click(event, image.original, index)
             }
           >
-            <Picture src={image.thumbnail} />
+            <SurideCard
+              turned={turned === index}
+              front={
+                <div>
+                  <Picture src={image.thumbnail} />
+                  <button
+                    className="turn-card"
+                    onClick={(event) => turn_card(event, index)}
+                  ></button>
+                </div>
+              }
+              back={
+                <div className="links">
+                  <a href={image.source}>Artist</a>
+                  <a href={image.artist}>Source</a>
+                  <button onClick={() => setTurned(null)}></button>
+                </div>
+              }
+            />
           </div>
         ))}
       </div>
@@ -108,9 +134,7 @@ export default function Gallery({ images }) {
               "--final-height": currentThing.finalHeight,
             }}
           />
-          <button className="close" onClick={close}>
-            close
-          </button>
+          <button className="close" onClick={close}></button>
         </div>
       )}
     </GalleryStyled>

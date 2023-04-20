@@ -1,7 +1,7 @@
-import { useEffect, useRef } from "react";
 import StarsStyled from "./Stars.styled";
-import useVisibility from "../../hooks/useWindowFocus";
-import random from "../../utilities/random";
+import useVisibility from "../../hooks/useVisibility";
+import add_star from "../../utilities/add_star";
+import { useEffect, useRef } from "react";
 
 export default function Stars({ children, totalStars }) {
   const containerRef = useRef(null);
@@ -9,35 +9,6 @@ export default function Stars({ children, totalStars }) {
   const visible = useVisibility();
 
   useEffect(() => {
-    function add_star(element) {
-      const star = document.createElement("span");
-      const top = random(0, 100);
-      const left = random(0, 100);
-      const delay = random(0, 1000);
-      const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-      const path = document.createElementNS(
-        "http://www.w3.org/2000/svg",
-        "path"
-      );
-
-      svg.setAttribute("viewBox", "0 0 24 24");
-      path.setAttribute(
-        "d",
-        "M12,1L9,9L1,12L9,15L12,23L15,15L23,12L15,9L12,1Z"
-      );
-
-      star.style.setProperty("--top", `${top}%`);
-      star.style.setProperty("--left", `${left}%`);
-      star.style.setProperty("--delay", `${delay}ms`);
-      star.classList.add("star");
-
-      star.addEventListener("animationend", () => element.removeChild(star));
-
-      svg.appendChild(path);
-      star.appendChild(svg);
-      element.appendChild(star);
-    }
-
     if (!visible) clearInterval(intervalIdRef.current);
     else
       intervalIdRef.current = setInterval(() => {
@@ -47,10 +18,5 @@ export default function Stars({ children, totalStars }) {
     return () => clearInterval(intervalIdRef.current);
   }, [visible]);
 
-  return (
-    <StarsStyled ref={containerRef}>
-      {children}
-      <p>visible: {visible.toString()}</p>{" "}
-    </StarsStyled>
-  );
+  return <StarsStyled ref={containerRef}>{children}</StarsStyled>;
 }

@@ -1,8 +1,30 @@
 import styled from "styled-components";
+import home from "../../assets/images/home.svg";
+import close from "../../assets/images/close.svg";
+import info from "../../assets/images/info.svg";
+import link_icon from "../../assets/images/link-icon.svg";
 
 const GalleryStyled = styled.main`
-  --mills: 500ms;
-  background: pink;
+  --mills: 500m8;
+  background: #a93b4d;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  position: relative;
+  z-index: 1;
+
+  .home-link {
+    background-image: url(${home});
+    background-color: azure;
+    background-size: 75%;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+  }
 
   .images {
     display: flex;
@@ -10,6 +32,64 @@ const GalleryStyled = styled.main`
     flex-wrap: wrap;
     gap: 20px;
     padding: 20px;
+
+    .card {
+      position: relative;
+
+      .turn-card {
+        background-image: url(${info});
+        background-size: cover;
+        background-color: azure;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: 25px;
+        height: 25px;
+        border-radius: 100%;
+        border: none;
+      }
+
+      .links {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+
+        a {
+          color: azure;
+          font-size: 18px;
+          text-decoration: none;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+
+          ::after {
+            content: "";
+            background-image: url(${link_icon});
+            background-size: 75%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: #f6efefcc;
+            border-radius: 3px;
+            width: 18px;
+            height: 18px;
+          }
+        }
+
+        button {
+          background-image: url(${close});
+          background-size: cover;
+          background-color: azure;
+          position: absolute;
+          top: 10px;
+          left: 10px;
+          width: 25px;
+          height: 25px;
+          border-radius: 100%;
+          border: none;
+        }
+      }
+    }
   }
 
   .pop-up {
@@ -121,9 +201,16 @@ const GalleryStyled = styled.main`
   }
 
   .close {
+    background-image: url(${close});
+    background-color: azure;
+    background-size: cover;
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
     position: fixed;
     top: 20px;
     right: 20px;
+    border: none;
   }
 
   @keyframes shrink {

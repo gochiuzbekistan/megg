@@ -1,19 +1,27 @@
 import Home from "./pages/Home/Home";
 import Gallery from "./pages/Gallery/Gallery";
-import { Route, Link } from "wouter";
+import { Route } from "wouter";
 import images from "./data";
+import AppStyled from "./App.styled";
+import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 
 function App() {
   return (
-    <div className="App">
+    <AppStyled>
+      <ScrollToTop />
       <Route path="/">
         <Home />
       </Route>
       <Route path="/gallery">
         <Gallery images={images} />
       </Route>
-      <footer>some things never change</footer>
-    </div>
+      <footer className="info-card">
+        By{" "}
+        <a href="https://github.com/Meggoo" target="_blank">
+          @Meggoo
+        </a>
+      </footer>
+    </AppStyled>
   );
 }
 

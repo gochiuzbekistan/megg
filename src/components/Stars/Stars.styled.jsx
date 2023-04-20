@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 const StarsStyled = styled.div`
-  background: #e5c6e5;
 
   position: relative;
 
